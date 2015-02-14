@@ -43,9 +43,9 @@ def main():
     #print track_id
     t,p = SimilarityMatrix()
     #print m
-    #imgplot1 = plt.imshow(t)
+    imgplot1 = plt.imshow(t)
+    imgplot1.set_cmap('hot')
     imgplot2 = plt.imshow(p)
-    #imgplot1.set_cmap('hot')
     imgplot2.set_cmap('hot')
     plt.colorbar()
     plt.show()
