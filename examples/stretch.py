@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # encoding: utf-8
 """
-simple_stretch.py
+stretch.py
+Compress or expand the entire track, tatum by tatum.  
 
-Compress or exapand the entire track, beat by beat.  
-
-Created by Thor Kell on 2013-11-18
+Created by Huy Tu on 2014-02-10
+The original code is from simple_stretch by Thor Kell on 2013-11-18
 """
 import math
 import os
