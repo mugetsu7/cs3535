@@ -1,46 +1,57 @@
 # Problem
-We want to investigate on collaborative filtering as the method of how popular applications and website do filtering processes to recommend their products for the user. 
+We want to investigate on how to make Infinite Jukebox on student server.
 
 # Question
-1. How to make the website secured from other users for the student?
+1. How to make the website secured from other users for the student server?
 2. How would the password be secured when get hacked?
-3. How to make the website run independently without the logistics that the original InfiniteJukebox has?
+3. What are limitations of those security options?
+4. How to make the website run independently without the logistics that the original Infinite Jukebox has?
 
 # Resources
-1. [Website Security]
-2. [Website Security2]
+1. [Website Security Introduction]
+2. [Website Security]
 3. [MP3 File Uploader]
+4. [InfiniteJukebox]
 
-### 1. Mini-abstract and relevance of [Website Security]
-Services such as Reddit, YouTube, Netflix, Amazon, Digg.com, and Last.fm are typical example of collaborative filtering based media.
-
-This resource answers question 1: What are some popular applications on social web?
+### 1. Mini-abstract and relevance of [Website Security Introduction]
+Infinite Jukebox has the option for other users to upload their own mp3 files to make it run through Infinite Jukebox. Therefore, in order to make it protected from other users from filling up and overloading the space on student server, content should only be seen by "authorized" eyes.
+- The .htpasswd file contains username/password pairs that the user would authorize the access of the website's contents to. The example of creating .htpasswd file is listed below. The user just need to change the path based on the appropriate directory that the user has, prompt a new username, and then list new password for that username respectively. 
+The .htpasswod would store an encrypted password corresponding to the appropriate user that would prevent information leaking when the student server is hacked.
+```python
+htpasswd -c /usr/local/username/safedirectory/.htpasswd john
+```
+- The .htaccess file is one of the possible ways to configure the details of your website without needed to alter the server config files. The period that starts the file name will keep the file hidden within the folder.
+The example of .htaccess is listed below. The user just need to change the path of the Author User File that pointed to your .htpasswd:
+```python
+AuthUserFile /usr/local/username/safedirectory/.htpasswd
+AuthGroupFile /dev/null
+AuthName "Please Enter Password"
+AuthType Basic
+Require valid-user
+```
+The user would also need to change the permission of both files .htaccess and .htpasswd
+```python
+chmod +x .filename
+```
+This resource answers question 1 and 2: How to make the website secured from other users for the student server? and How would the password be secured when get hacked?
 
 ### 2. Mini-abstract and relevance of [MP3 File Uploader]
-Collaborative filtering is popular recommendation algorithm that bases its predictions and recommendations on the ratings, multiple users/agents, data resources, etc. 
-There are two different types of collaborative filtering including User-User and Item-Item Collaborative Filtering
-User-User Collaborative Filtering: "I like what you like"
-- find other users whose have similar past rating behavior to the current user''s past rating behavior
-- use their ratings on other items to predict what the current user will like
-Item-Item Collaborative Filtering:
-- use similarities between the rating patterns of items
-- still deduced from user preference patterns rather than extracted from item data
-It would be more scalable to use Item-Item CF for large user bases instead of User-User CF due to the big difference in the Big-O complexity of the searching for the neighbors of a user operations. 
+A few problems that users would encounter in term of using the .htaccess file are:
++One: Speed—the .htaccess page may slow down your server somewhat; for most servers this will probably be an imperceptible change. 
+This is because of the location of the page: the .htaccess file affects the pages in its directory and all of the directories under it. 
+Each time a page loads, the server scans its directory, and any above it until it reaches the highest directory or an .htaccess file.
++Two: Two: Security—the .htaccess file is much more accessible than standard apache configuration and the changes are made live instantly (without the need to restart the server). 
+Granting users permission to make alterations in the .htaccess file gives them a lot of control over the server itself. 
 
-This resource answers question 2 and 4: What is collaborative filtering method? and What are different types of collaborative filtering?
+This resource answers question 3: What are limitations of those security options?
 
-### 3. Mini-abstract and relevance of [Amazon Recommendations]
-E-commerce recommendation algorithms often operate in a challenging environment with:
-+ Large amounts of data, countless customers and millions of distinct catalog items
-+ New customer have limited information 
-+ Older customer have too much information
+### 3. Mini-abstract and relevance of [InfiniteJukebox]
+Looking at the code for the InfiniteJukebox at the moment, the option of uploading the song would puts the song in the amazon web services and then call Echonest for the analysis of the song. However, we need to change the storing option to the local folder on the student server. 
+Moreover, we also need to update the API_Key to our instead of abusing their API_Key. 
 
-It would be more scalable to use Item-Item CF for large user bases instead of User-User CF due to the big difference in the Big-O complexity of the searching for the neighbors of a user operations. 
-Unless the CF uses dimensionality reduction, sampling, or partitioning which would reduce the recommendation quality
+This resource answers question 4: How to make the website run independently without the logistics that the original Infinite Jukebox has?
 
-The article mentioned search-based methods and cluster method as additional recommendation algorithms 
-This resource answers question 3, 5, 6 : Why collaborative filtering is needed?, Which collaborative filtering is more preferable and why?, and What are some other recommendation algorithms/systems?
-
-[Website Security]: http://weavervsworld.com/docs/other/passprotect.html
-[Website Security2]:https://www.digitalocean.com/community/tutorials/how-to-use-the-htaccess-file
+[Website Security Introduction]: http://weavervsworld.com/docs/other/passprotect.html
+[Website Security]:https://www.digitalocean.com/community/tutorials/how-to-use-the-htaccess-file
 [MP3 File Uploader]: http://bytes.com/topic/php/answers/953470-uploading-audio-mp3-file-php
+[InfiniteJukebox]: http://labs.echonest.com/Uploader/index.html
