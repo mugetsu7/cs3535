@@ -41,7 +41,7 @@ A few problems that users would encounter in term of using the .htaccess file ar
 - One: Speed—the .htaccess page may slow down your server somewhat; for most servers this will probably be an imperceptible change. 
 This is because of the location of the page: the .htaccess file affects the pages in its directory and all of the directories under it. 
 Each time a page loads, the server scans its directory, and any above it until it reaches the highest directory or an .htaccess file.
-- Two: Two: Security—the .htaccess file is much more accessible than standard apache configuration and the changes are made live instantly (without the need to restart the server). 
+- Two: Security—the .htaccess file is much more accessible than standard apache configuration and the changes are made live instantly (without the need to restart the server). 
 Granting users permission to make alterations in the .htaccess file gives them a lot of control over the server itself. 
 
 This resource answers question 3: What are limitations of those security options?
