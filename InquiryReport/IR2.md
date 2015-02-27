@@ -15,12 +15,12 @@ We want to investigate on how to make Infinite Jukebox on student server.
 
 ### 1. Mini-abstract and relevance of [Website Security Introduction]
 Infinite Jukebox has the option for other users to upload their own mp3 files to make it run through Infinite Jukebox. Therefore, in order to make it protected from other users from filling up and overloading the space on student server, content should only be seen by "authorized" eyes.
-- The .htpasswd file contains username/password pairs that the user would authorize the access of the website's contents to. The example of creating .htpasswd file is listed below. The user just need to change the path based on the appropriate directory that the user has, prompt a new username, and then list new password for that username respectively. 
+The .htpasswd file contains username/password pairs that the user would authorize the access of the website's contents to. The example of creating .htpasswd file is listed below. The user just need to change the path based on the appropriate directory that the user has, prompt a new username, and then list new password for that username respectively. 
 The .htpasswod would store an encrypted password corresponding to the appropriate user that would prevent information leaking when the student server is hacked.
 ```python
 htpasswd -c /usr/local/username/safedirectory/.htpasswd john
 ```
-- The .htaccess file is one of the possible ways to configure the details of your website without needed to alter the server config files. The period that starts the file name will keep the file hidden within the folder.
+The .htaccess file is one of the possible ways to configure the details of your website without needed to alter the server config files. The period that starts the file name will keep the file hidden within the folder.
 The example of .htaccess is listed below. The user just need to change the path of the Author User File that pointed to your .htpasswd:
 ```python
 AuthUserFile /usr/local/username/safedirectory/.htpasswd
@@ -37,10 +37,11 @@ This resource answers question 1 and 2: How to make the website secured from oth
 
 ### 2. Mini-abstract and relevance of [MP3 File Uploader]
 A few problems that users would encounter in term of using the .htaccess file are:
-+One: Speed—the .htaccess page may slow down your server somewhat; for most servers this will probably be an imperceptible change. 
+
+-One: Speed—the .htaccess page may slow down your server somewhat; for most servers this will probably be an imperceptible change. 
 This is because of the location of the page: the .htaccess file affects the pages in its directory and all of the directories under it. 
 Each time a page loads, the server scans its directory, and any above it until it reaches the highest directory or an .htaccess file.
-+Two: Two: Security—the .htaccess file is much more accessible than standard apache configuration and the changes are made live instantly (without the need to restart the server). 
+-Two: Two: Security—the .htaccess file is much more accessible than standard apache configuration and the changes are made live instantly (without the need to restart the server). 
 Granting users permission to make alterations in the .htaccess file gives them a lot of control over the server itself. 
 
 This resource answers question 3: What are limitations of those security options?
