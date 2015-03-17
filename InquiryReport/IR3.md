@@ -18,7 +18,7 @@ The game will keep track of the actual transitions that occurs, the transitions 
 This resource answers question 1: What are the visions and regulations for the game?
 
 ### 2. Mini-abstract and relevance of [Make Button] and [Space Bar Button]
-Button function is self-explanatory. However, we want something to happen as a function to run when the button is click so we need a button categorized as onclick Event button which is different from the normal button that shall calls a function in javascript code section to do the work of categozing the detected transition is true or false. 
+Button function is self-explanatory. However, we want something to happen as a function to run when the button is click so we need a button categorized as onclick Event button which is different from the normal button. The button shall calls a function in javascript code section as it is clicked to do the work of categozing the detected transition is true or false. 
 ```python
 <button onclick="myFunction()">Click me</button>
 ```
