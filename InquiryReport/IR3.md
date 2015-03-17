@@ -22,7 +22,7 @@ Button function is self-explanatory. However, we want something to happen as a f
 ```python
 <button onclick="myFunction()">Click me</button>
 ```
-Moreover, the user has two options with the button, they can click on it or they can click the space bar which is more convenient and it still activate the button as the same time. So in myFunction in javascript section we need to check if the space bar button is pressed before activating anything:
+Moreover, the user has two options with the button, they can click on it or they can click the space bar which is more convenient and it still activate the button as the same time. So in myFunction in javascript section we need to check if the space bar button is pressed before working on anything else. Looking at this code below, e.keyCode of 32 is the particular keyCode representing the assign number for space bar:
 ```python
 $.keyup(function(e){
 	if(e.keyCode == 32){
