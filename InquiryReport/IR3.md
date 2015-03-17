@@ -15,7 +15,7 @@ We want to investigate on how to judge the users on their ability to judge the t
 ### 1. Mini-abstract
 Dr. Parry has helped guide me to think of making InfiniteJukebox as a Transition Detection game to study users on their ability to judge the transition of the song on Infinite Jukebox. The game would prompt the user to listen to a song on their choice. There would be transition occurred along the song and the user have 4-8 beats time frame to hit the space bar button to indicate that they heard the transition. 
 The game will keep track of the actual transitions that occurs, the transitions that the user was able to detect, and the transitions that the user falsely detect.   
-This resource answers question 1: What are the visions and regulations for the game?
+This resource answers question 1: What are the visions and regulations of the InfiniteJukebox Transition Detection Game?
 
 ### 2. Mini-abstract and relevance of [Make Button] and [Space Bar Button]
 Button function is self-explanatory. However, we want something to happen as a function to run when the button is click so we need a button categorized as onclick Event button which is different from the normal button. The button shall calls a function in javascript code section as it is clicked to do the work of categozing the detected transition is true or false. 
