@@ -2,7 +2,7 @@
 We want to investigate on how to judge the users on their ability to judge the transition of the song on Infinite Jukebox. 
 
 # Question
-1. What are the visions and regulations for the game?
+1. What are the visions and regulations of the InfiniteJukebox Transition Detection Game?
 2. How to make button that would link to the space bar button on the keyboard?
 3. How does InfiniteJukebox represent beats?
 4. How does InfiniteJukebox do the transition?	
@@ -13,7 +13,7 @@ We want to investigate on how to judge the users on their ability to judge the t
 3. [InfiniteJukebox]
 
 ### 1. Mini-abstract
-Dr. Parry has helped guide me to think of making InfiniteJukebox as a game to study users on their ability to judge the transition of the song on Infinite Jukebox. The game would prompt the user to listen to a song on their choice. There would be transition occurred along the song and the user have 4-8 beats time frame to hit the space bar button to indicate that they heard the transition. 
+Dr. Parry has helped guide me to think of making InfiniteJukebox as a Transition Detection game to study users on their ability to judge the transition of the song on Infinite Jukebox. The game would prompt the user to listen to a song on their choice. There would be transition occurred along the song and the user have 4-8 beats time frame to hit the space bar button to indicate that they heard the transition. 
 The game will keep track of the actual transitions that occurs, the transitions that the user was able to detect, and the transitions that the user falsely detect.   
 This resource answers question 1: What are the visions and regulations for the game?
 
