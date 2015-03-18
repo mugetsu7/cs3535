@@ -35,7 +35,9 @@ This resource answers question 2: How to make button that would link to the spac
 
 ### 3. Mini-abstract and relevance of [InfiniteJukebox]
 There are two crucial variables that InfiniteJukebox has including tile and branch. Tile is the array/list of tiles in which each tile representing one beat and together tiles compose the whole circle visualization representing the whole song. There are different kinds of branch such as last, long, reverse, or sequential branch. However, branch in general represent the possible jump or possible transition at that specific tile where the cursor is at to another arbitrary tile or beat in the circle or song that is considered or evaluated as the best transition.
+
 Basically, for each possible transition location that the cursor lands on, it would randomly see if the cursor would take that transition and jump to the tile at the end of the branch or just continue to move to the next sequential tile. 
+
 Technically, when the Driver function is called inside the javascript code block, it would pass in the tile to the selectRandomNextTile function to process the request and make the movement. selectRandomNextTile would pass in the current tile to shouldRandomBranch to decide yes or no to take the transition or the jump. shouldRandomBranch then responds the decision back to selectRandomNextTile to complete the process and movement of the cursor.  
 
 
