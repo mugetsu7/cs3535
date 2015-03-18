@@ -1,5 +1,5 @@
 # Problem
-We want to investigate on how to judge the users on their ability to judge the transition of the song on Infinite Jukebox. 
+We want to investigate on how to judge the users on their ability to identify the occurrence of transitions of the song on Infinite Jukebox. 
 
 # Question
 1. What are the visions and regulations of the InfiniteJukebox Transition Detection Game?
