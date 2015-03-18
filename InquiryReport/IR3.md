@@ -40,6 +40,7 @@ Basically, for each possible transition location that the cursor lands on, it wo
 
 Technically, when the Driver function is called inside the javascript code block, it would pass in the tile to the selectRandomNextTile function to process the request and make the movement. selectRandomNextTile would pass in the current tile to shouldRandomBranch to decide yes or no to take the transition or the jump. shouldRandomBranch then responds the decision back to selectRandomNextTile to complete the process and movement of the cursor.  
 
+Therefore, Driver would be the best option as far as location for inserting the extra integration to make InfiniteJukebox into InfiniteJukebox Transition Detection Game. We would be able to write most of the details in here. Especially, we want the user to have 4-8 beats time frame to hit the space bar so we would want to flag the program to make sure that it would not take any immediate transition until 4-8 beats have passed in Driver function. 
 
 This resource answers question 3 and 4: How does InfiniteJukebox represent beats? and How does InfiniteJukebox do the transition?	
 
