@@ -1,5 +1,5 @@
 # Problem
-How does Shazam or other software recognize and identify songs 
+How does Shazam or other software recognize and identify songs? 
 
 # Question
 1. What are the steps necessary of the recognizing and identifying process?
