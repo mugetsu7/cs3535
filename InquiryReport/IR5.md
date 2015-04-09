@@ -9,7 +9,7 @@ How does Shazam or other software recognize and identify songs?
 
 # Resources
 1. [Shazam It!]
-2. [Information Theoretic Measures of Similarity]
+2. [An Industrial-Strength Audio Search Algorithm]
 
 ### 1. Mini-abstract of [Shazam It!]
 Renditions are often quite different from the original in one or many attributes including instrumentation, key or genre. One has to consider not only the key or tempo differences between cover song sequences, but also the ways in which these chord sequences approximate (or not) the songs they represent
@@ -22,7 +22,7 @@ This resource answers question 1, 2, and 5: How do we want to maximize retrieval
 
 
 
-### 2. Mini-abstract and relevance of [An Industrial-Strength Audio Search Algorithm ]
+### 2. Mini-abstract and relevance of [An Industrial-Strength Audio Search Algorithm]
 
 This research based on a variation on the theme of using string alignment for Music Information Retrieval in the context of cover song identification in audio collections. Here, the strings are derived from audio by means of Hidden Markov Model -based chord estimation. The characteristics of the cover-song ID problem and the nature of common chord estimation errors are carefully considered. There are three areas needed to be considered including estimating chord sequences and sequence alignment.
 
@@ -36,4 +36,4 @@ The research measures the impact of actions including key-shifting; varying the 
 This resource answers question 3 and 4: What are some methods to be used to retrieve the original song from the cover songs? and What are some impacts and aims of this research?  
 
 [Shazam It!]: http://www.toptal.com/algorithms/shazam-it-music-processing-fingerprinting-and-recognition
-[An Industrial-Strength Audio Search Algorithm ]: https://www.ee.columbia.edu/~dpwe/papers/Wang03-shazam.pdf
+[An Industrial-Strength Audio Search Algorithm]: https://www.ee.columbia.edu/~dpwe/papers/Wang03-shazam.pdf
