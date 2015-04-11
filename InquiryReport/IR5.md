@@ -5,35 +5,36 @@ How does Shazam or other software recognize and identify songs?
 1. What are the steps necessary of the recognizing and identifying process?
 2. What are the usage from having song recognizer?
 3. How do Shazam analyze and recognize a song?
-4. How do Shazam match song after having song analysis?
+4. What are some limitations of the algorithms?
 
 # Resources
 1. [Shazam It!]
 2. [An Industrial-Strength Audio Search Algorithm]
 
 ### 1. Mini-abstract of [Shazam It!]
-Renditions are often quite different from the original in one or many attributes including instrumentation, key or genre. One has to consider not only the key or tempo differences between cover song sequences, but also the ways in which these chord sequences approximate (or not) the songs they represent
+Often in the day, people hear a really good song or a familiar one in the public setting. They enjoyed that song a lot a long time ago and desperately wanted to heart it again, but can’t remember its name! However given they have a phone and data, they are saved with the mobile app such as Shazam.
 
-In order to represent and model music signals for cover song detection, a variety of methods have been proposed involving cross-correlation, alignment techniques, cross-recurrence analysis, and time series prediction.
+Moreover, the app can be used in order to determine and identify plagiarism in music, or to find out who was the initial inspiration to some pioneers of blues, jazz, rock, pop or any other genre given the fact that we have a well-rounded and in-depth database of collection of music.
 
-From having cover song detection, potential applications includes automated music recommendation, copyright infringement detection, and musicological research
+The steps including: capturing the song, conversion to appropriate frequency domain, analyzing and fingerprinting, hashing it, and then search for the marching song with the hashing data in the database.  
 
-This resource answers question 1, 2, and 5: How do we want to maximize retrieval results of the original song from the cover songs? and What are the usage from having cover song detection? and What are other methods have been used to approach this problem?	
-
-
+This resource answers question 1, and 2: What are the steps necessary of the recognizing and identifying process? and What are the usage from having song recognizer?
 
 ### 2. Mini-abstract and relevance of [An Industrial-Strength Audio Search Algorithm]
 
-This research based on a variation on the theme of using string alignment for Music Information Retrieval in the context of cover song identification in audio collections. Here, the strings are derived from audio by means of Hidden Markov Model -based chord estimation. The characteristics of the cover-song ID problem and the nature of common chord estimation errors are carefully considered. There are three areas needed to be considered including estimating chord sequences and sequence alignment.
+In the environment with the presence of highly significant noise and distortion, they experimented with a variety of candidate features that could survive GSM encoding in the presence of noise for sound analysis. Spectrogram peaks has been decided to be one of the means for that. due to their robustness in the presence of noise and approximate linear superposability. A time-frequency point is a candidate peak if it has a higher energy content than all its neighbors in a region centered around the point. 
 
-- Firstly, on the topic of Estimating Chord Sequence, the approach is used as the front end to our cover song identification system. First, 36-dimensional chroma vectors, or pitch-class profiles, are calculated from the audio signal. These vectors are tuned and, optionally, averaged within beats, before being quantized into 12-bits vectors representing the spectral energy distribution across notes of the chromatic scale. These features are used as observations on a 24-state hidden Markov model, where each state corresponds to one of the major and minor triads. The parameters of the model, initialized using simple musical knowledge, are trained in an unsupervised fashion using the Expectation-Maximization (EM) algorithm. The final sequence of triads is obtained by decoding the model using the Viterbi algorithm.
+Fingerprint hashing is the next step which they processed from the constellation map, in which pairs of time-frequency points are combinatorially associated. Anchor points are chosen, each anchor point having a target zone associated with it. 
 
-- Secondly, on the topic of Sequence Alignment, finding the globally-optimal alignment between strings is an extensively researched topic. The works involve with substitution matrix and key-invariant alignment. The idea is to find the best possible path between the strings by allowing inexact character matches (i.e. substitutions or swaps) and the introduction of gaps in either of the sequences. In this context, the best path is the one that maximizes a score function, usually the sum of individual scores for aligned pairs of characters, under the consideration that both gap insertions and substitutions imply a penalty. 
+The previous operation is carried out on each track in a database to generate a corresponding list of hashes and their associated offset times to receive a database index. Track IDs may also be appended to the small data structs, yielding anggregate 64-bit struct, 32 bits for the hash and 32 bits for the time offset and track ID. To facilitate fast processing, the 64-bit structs are sorted according to hash token value. 
 
-The experiment is done through 4 testings including testing shifts, testing gaps, testing beats, and testing swaps.
-The research measures the impact of actions including key-shifting; varying the gap penalty used by the scoring algorithm, changing the distribution of positive and negative values on the substitution matrix by varying the offset value; and using beat synchronous instead of frame-based chroma features for the sequence estimation 
+The bins are scanned for matches after all sample hashes have been used to search in the database to form matching time pairs. Within each bin the set of time pairs represents a scatterplot of association between the sample and database sound files. The presence of a statistically significant cluster in a scatterplot of database time versus sample time for a track that does not match the sample indicates a match. This bin scanning process is repeated for each track in the database until a significant match is found. 
 
-This resource answers question 3 and 4: What are some methods to be used to retrieve the original song from the cover songs? and What are some impacts and aims of this research?  
+There are two limitations to the algorithm: 
+- Firstly, the approach the algorithm took was search and recognize sound files that are already present in the database. It is not expected to generalize to live recordings, another version of the song, cover songs, or plagiarized songs. 
+- Secondly, the recording will include a lot of noise that will introduce some error in the matches. Yet, Shazam would only do eliminate all but the correct song from our list of matches
+
+This resource answers question 3 and 4: How do Shazam analyze and recognize a song? and What are some limitations of the algorithms?
 
 [Shazam It!]: http://www.toptal.com/algorithms/shazam-it-music-processing-fingerprinting-and-recognition
 [An Industrial-Strength Audio Search Algorithm]: https://www.ee.columbia.edu/~dpwe/papers/Wang03-shazam.pdf
