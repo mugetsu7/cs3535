@@ -12,6 +12,8 @@ How to improve the InfiniteJukebox Transition Detection Game?
 1. [Change IMG SRC]
 2. [Hide Object]
 3. [InfiniteJukebox]
+4. [file]
+5. [image]
 
 ### 1. Mini-abstract
 The version of InfiniteJJ is the experiment still having the tile circle of beats from the original Infinite Jukebox to test if all the variables actual detections, detected transition, false positive transition, and false negative transition work. Therefore, user can easily see the transition makes and detect the transition. However, hiding the tile circle of beat along with the actual transitions row of the data table would greatly improve the level of difficulty because users have to solely depend on their ears then. A total score row can be added to keep track of all the points. It was set up previously is that if the transition was made and the user pressed down the plus button on the right key pad then the detected transitions value would increment until the fifth beat after making the transition. It is problematic because the user can score 50 points on detected transition at once while the user was only able to detect one transition. Therefore, there are possible updates so that within the four beats after the transition is made, the user can only score one time regardless of continuously pressing down but the earlier the user press the button the more point the user would get. 
