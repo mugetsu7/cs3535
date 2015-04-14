@@ -61,5 +61,6 @@ Yet, in order to truly test the users' ability to determine the transitions of b
 [Hide Object]: http://www.w3schools.com/jsref/prop_style_display.asp
 [InfiniteJukebox]: http://labs.echonest.com/Uploader/index.html
 [file] : http://oyster.ignimgs.com/wordpress/write.ign.com/19477/2013/07/Press-Start-600x375.jpg
+
 [image] : http://bbsimg.ngfiles.com/1/24409000/ngbbs50e4c67b0376b.jpg
 
