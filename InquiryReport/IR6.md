@@ -44,7 +44,13 @@ document.getElementById("myImg").src = "http://oyster.ignimgs.com/wordpress/writ
 ```
 
 ### 4. Mini-abstract and relevance of [Hide Object]
-
+The original tag that contains the tile circle of beats for InfiniteJukebox is shown as below: 
+```python
+<div> 
+	<span id='tiles'> </span> 
+</div>
+```
+Yet, in order to truly test the users' ability to determine the transitions of beats within a song, the visualization would not be needed even when its functionality still matter. Therefore, in order to hide the object which is the tile circle of beats without affecting the functionality of it through the style aspect (style = "display: none") inside the div tag as shown below: 
 ```python
 <div style = "display: none"> 
 	<span id='tiles'> </span> 
