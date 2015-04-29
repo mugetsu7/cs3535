@@ -47,6 +47,7 @@ Moreover, since Unix line endings (\n) are different than Windows line endings (
 function write_text(text) { 
   data += text;
   data += '\r\n';
+}
 ```
 This resource answers question 3 and 6: How do we print out next line in the text file? and How do we simplify the recording system?
 
