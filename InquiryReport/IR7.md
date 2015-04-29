@@ -7,7 +7,8 @@ We want to fix some limitations of InfiniteJukebox Transition Detection Game and
 3. How do we print out next line in the text file?
 4. How do we record the current time?
 5. How do we record the user's IP?
-6. How do we record the beat where the transition starts and the beat which is the transition's destination of the transition?
+6. How do we simplify the recording system?
+7. How do we record the beat where the transition starts and the beat which is the transition's destination of the transition?
 
 # Resources
 [InfiniteJukebox]: http://labs.echonest.com/Uploader/index.html
@@ -37,39 +38,39 @@ var tile = next.dest.tile;
 D_Tile = tile.which;
 ```
 
-This resource answers question 2, 4, and 6: How do we fix the limitations of the game?, How do we record the current time?, and How do we record the beat where the transition starts and the beat which is the transition's destination of the transition?
-### 3. Mini-abstract and relevance of [Create Downloadable TextFile]
+This resource answers question 2, 4, and 7: How do we fix the limitations of the game?, How do we record the current time?, and How do we record the beat where the transition starts and the beat which is the transition's destination of the transition?
+### 3. Mini-abstract and relevance of [Create Downloadable TextFile] and [New Line]
+It is very similar to the original one I had. But I added a global data variable that contains all the text I want to write in the txt file that has the write_text() method that keeps adding text at appropriate places. 
 
+Moreover, since Unix line endings (\n) are different than Windows line endings (\r\n) and most computers use notepad to open txt file so we need to use "\r\n" for next line characters instead. 
+```javascript
+function write_text(text) { 
+  data += text;
+  data += '\r\n';
+```
+This resource answers question 3 and 6: How do we print out next line in the text file? and How do we simplify the recording system?
 
-### 4. Mini-abstract and relevance of [New Line]
-
-Before the data table, there would be an image [File] indicate the game start.
-```python
-<img id="myImg" src="http://oyster.ignimgs.com/wordpress/write.ign.com/19477/2013/07/Press-Start-600x375.jpg" width="300" height="300">
-```
-When the game ends, this [Image] would show instead:		
-```python
-document.getElementById("myImg").src = "http://bbsimg.ngfiles.com/1/24409000/ngbbs50e4c67b0376b.jpg";
-```
-When the space bar is pressed to retry the game, the original image [File] would show 
-```python
-document.getElementById("myImg").src = "http://oyster.ignimgs.com/wordpress/write.ign.com/19477/2013/07/Press-Start-600x375.jpg";
-```
 
 ### 5. Mini-abstract and relevance of [IP Address]
-The original tag that contains the tile circle of beats for InfiniteJukebox is shown as below: 
-```python
-<div> 
-	<span id='tiles'> </span> 
-</div>
-```
-Yet, in order to truly test the users' ability to determine the transitions of beats within a song, the visualization would not be needed even when its functionality still matter. Therefore, in order to hide the object which is the tile circle of beats without affecting the functionality of it through the style aspect (style = "display: none") inside the div tag as shown below: 
-```python
-<div style = "display: none"> 
-	<span id='tiles'> </span> 
-</div>
-```
+We need to make an ajax call to hostip.info or a similar service for IP Address as shown below:
+```javascript
+function myIP() {
+    if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
+    else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 
+    xmlhttp.open("GET","http://api.hostip.info/get_html.php",false);
+    xmlhttp.send();
+
+    hostipInfo = xmlhttp.responseText.split("\n");
+
+    for (i=0; hostipInfo.length >= i; i++) {
+        ipAddress = hostipInfo[i].split(":");
+        if ( ipAddress[0] == "IP" ) return ipAddress[1];
+    }
+
+    return false;
+}
+```
 [IP Address]: http://stackoverflow.com/questions/391979/get-client-ip-using-just-javascript
 [New Line]: http://stackoverflow.com/questions/11058884/newlines-are-missing-after-downloading-txt-file-through-the-browser
 [InfiniteJukebox]: http://labs.echonest.com/Uploader/index.html
